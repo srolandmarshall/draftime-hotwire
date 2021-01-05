@@ -8,9 +8,17 @@
 
 Well then _DRAFTime_ might be for you.
 
-DRAFTime is currently in pre-alpha stage. It is not yet in a hostable manner. It requires Ruby and PostGres, but nothing beyond that, I'm pretty sure. If you don't know what those are and how to install them, you shouldn't be using this application.
+DRAFTime is currently in pre-alpha stage. It is not yet in a hostable manner. It requires Ruby, Redis and PostGres, but nothing beyond that, I'm pretty sure.
 
 To get started:
+
+### Installing Prerequisites
+
+- [Install Ruby and Rails](https://gorails.com/setup/osx/11.0-big-sur)
+- [Install Redis](https://gist.github.com/tomysmile/1b8a321e7c58499ef9f9441b2faa0aa8)
+- [Install Postgresql](https://wiki.postgresql.org/wiki/Homebrew)
+
+### Running Draftime
 
 - `clone` this repo locally
 - `cd` to the repo
