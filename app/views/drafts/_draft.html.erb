@@ -3,6 +3,10 @@
     <div class="card-body">
       <%= draft.title %><br/>
       <%= draft.league %>
+      <div class="btn-group float-right">
+        <%= link_to 'Edit', edit_draft_path(draft), class:'btn-warning' %>
+        <%= button_to 'Delete', draft, method: :delete %>
+      </div>
     </div>
   </div>
 <% end %>

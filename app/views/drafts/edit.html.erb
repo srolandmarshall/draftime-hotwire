@@ -1,6 +1,10 @@
 <h1>Editing Draft</h1>
 
-<%= render 'form', draft: @draft %>
+<%= turbo_frame_tag dom_id(@draft) do %>
+  <div class="card">
+    <div class="card-body">
+        <%= render 'form', draft: @draft %>
+    </div>
+  </div>
 
-<%= link_to 'Show', @draft %> |
-<%= link_to 'Back', drafts_path %>
+<% end %>
