@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Hotwire Drafts</h1>
+
+<%= turbo_stream_from "drafts" %>
+<%= turbo_frame_tag  "drafts_form" do %>
+  <%= render 'form', draft: @draft %>
+<% end %>
+
+<%= turbo_frame_tag "drafts" do %>
+  <%= render @drafts %>
+<% end %> 
+
