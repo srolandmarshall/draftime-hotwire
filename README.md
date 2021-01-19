@@ -1,6 +1,6 @@
 # DRAFTime
 
-## A custom draft tool that doesn't suck.
+## A custom draft tool that doesn't suck
 
 - Do you hate drafting with Yahoo, ESPN, or anyone else's online draft tool?
 - Are you the only technologically sufficient member of your league?
@@ -23,10 +23,14 @@ To get started:
 - `clone` this repo locally
 - `cd` to the repo
 - `bundle install`
-- `rake db:migrate`
-- `rake db:seed`
-- `rails s`
+- `rake db:create`
+- `rake db:migrate` (and then `rake db:seed` if it does not seed automatically)
+- `foreman start`
 - Navigate to `localhost:3000`
+
+### Runtime Settings
+
+You can set port in `./Procfile` by modifying the value after the `-p` in the `rails` command.
 
 ## License Stuff
 
