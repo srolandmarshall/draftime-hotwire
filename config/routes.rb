@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :teams
   resources :leagues
   resources :drafts
   root to: 'drafts#index'

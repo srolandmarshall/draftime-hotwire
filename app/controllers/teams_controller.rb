@@ -69,6 +69,6 @@ class TeamsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def team_params
-      params.require(:team).permit(:players, :league_id, :code, :full_name, :short_name)
+      params.require(:team).permit(:league_id_id, :code, :full_name, :short_name, :players_id)
     end
 end

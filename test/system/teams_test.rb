@@ -16,8 +16,8 @@ class TeamsTest < ApplicationSystemTestCase
 
     fill_in "Code", with: @team.code
     fill_in "Full name", with: @team.full_name
-    fill_in "League", with: @team.league_id
-    fill_in "Players", with: @team.players
+    fill_in "League id", with: @team.league_id_id
+    fill_in "Players", with: @team.players_id
     fill_in "Short name", with: @team.short_name
     click_on "Create Team"
 
@@ -31,8 +31,8 @@ class TeamsTest < ApplicationSystemTestCase
 
     fill_in "Code", with: @team.code
     fill_in "Full name", with: @team.full_name
-    fill_in "League", with: @team.league_id
-    fill_in "Players", with: @team.players
+    fill_in "League id", with: @team.league_id_id
+    fill_in "Players", with: @team.players_id
     fill_in "Short name", with: @team.short_name
     click_on "Update Team"
 

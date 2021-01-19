@@ -5,11 +5,11 @@
 <table>
   <thead>
     <tr>
-      <th>Players</th>
       <th>League</th>
       <th>Code</th>
       <th>Full name</th>
       <th>Short name</th>
+      <th>Players</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,11 +17,11 @@
   <tbody>
     <% @teams.each do |team| %>
       <tr>
-        <td><%= team.players %></td>
-        <td><%= team.league_id %></td>
+        <td><%= team.league_id_id %></td>
         <td><%= team.code %></td>
         <td><%= team.full_name %></td>
         <td><%= team.short_name %></td>
+        <td><%= team.players_id %></td>
         <td><%= link_to 'Show', team %></td>
         <td><%= link_to 'Edit', edit_team_path(team) %></td>
         <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
