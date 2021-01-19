@@ -1,0 +1,27 @@
+<%= form_with(model: pick) do |form| %>
+  <% if pick.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pick.errors.count, "error") %> prohibited this pick from being saved:</h2>
+
+      <ul>
+        <% pick.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :player_id %>
+    <%= form.text_field :player_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :draft_id %>
+    <%= form.text_field :draft_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
