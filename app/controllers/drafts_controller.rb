@@ -72,6 +72,6 @@ class DraftsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def draft_params
-    params.require(:draft).permit(:title, :league)
+    params.require(:draft).permit(:title, :league_id)
   end
 end
