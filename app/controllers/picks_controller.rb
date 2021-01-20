@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class PicksController < ApplicationController
-  before_action :set_pick, only: [:show, :edit, :update, :destroy]
+  before_action :set_pick, only: %i[show edit update destroy]
 
   # GET /picks
   # GET /picks.json
@@ -10,6 +12,7 @@ class PicksController < ApplicationController
   # GET /picks/1
   # GET /picks/1.json
   def show
+    @pick = Pick.new
   end
 
   # GET /picks/new
@@ -18,8 +21,7 @@ class PicksController < ApplicationController
   end
 
   # GET /picks/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /picks
   # POST /picks.json
@@ -28,11 +30,12 @@ class PicksController < ApplicationController
 
     respond_to do |format|
       if @pick.save
-        format.html { redirect_to @pick, notice: 'Pick was successfully created.' }
+        format.html { redirect_to draft_path(@pick.draft_id), notice: 'Pick was successfully created.' }
         format.json { render :show, status: :created, location: @pick }
       else
         format.html { render :new }
         format.json { render json: @pick.errors, status: :unprocessable_entity }
+        format.turbo_stream { render turbo_stream: turbo_stream.replace(@pick, partial: 'picks/form', locals: { pick: @pick }) }
       end
     end
   end
@@ -62,13 +65,14 @@ class PicksController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_pick
-      @pick = Pick.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def pick_params
-      params.require(:pick).permit(:player_id, :draft_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_pick
+    @pick = Pick.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def pick_params
+    params.require(:pick).permit(:player_id, :draft_id)
+  end
 end

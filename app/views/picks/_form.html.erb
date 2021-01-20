@@ -1,4 +1,4 @@
-<%= form_with(model: pick) do |form| %>
+<%= form_with(model: pick, id: dom_id(pick)) do |form| %>
   <% if pick.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(pick.errors.count, "error") %> prohibited this pick from being saved:</h2>

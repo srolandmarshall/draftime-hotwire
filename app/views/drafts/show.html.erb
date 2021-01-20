@@ -7,8 +7,21 @@
 
 <p>
   <strong>League:</strong>
-  <%= @draft.league %>
+  <%= @draft.league.name %>
 </p>
+
+<%= turbo_stream_from "picks" %>
+  <%= turbo_frame_tag  "picks_form" do %> 
+    <%= render 'picks/form', pick: @pick %> 
+  <% end %> 
+
+<%= turbo_frame_tag "picks" do %>
+  <% if @picks %>
+    <%= render @picks %>
+  <% else %>
+  <h3>No picks yet.</h3>
+  <% end %>
+<% end %> 
 
 <%= link_to 'Edit', edit_draft_path(@draft) %> |
 <%= link_to 'Back', drafts_path %>

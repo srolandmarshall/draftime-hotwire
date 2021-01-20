@@ -12,7 +12,11 @@ class DraftsController < ApplicationController
 
   # GET /drafts/1
   # GET /drafts/1.json
-  def show; end
+  def show
+    @draft = Draft.find(params[:id])
+    @picks = Pick.find_by(draft_id: params[:id])
+    @pick = Pick.new(draft_id: params[:id])
+  end
 
   # GET /drafts/new
   def new
@@ -20,7 +24,9 @@ class DraftsController < ApplicationController
   end
 
   # GET /drafts/1/edit
-  def edit; end
+  def edit
+    @draft = Draft.find(params[:id])
+  end
 
   # POST /drafts
   # POST /drafts.json
