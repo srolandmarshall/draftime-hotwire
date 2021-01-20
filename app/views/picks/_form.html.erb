@@ -13,13 +13,10 @@
 
   <div class="field">
     <%= form.label :player_id %>
-    <%= form.text_field :player_id %>
+    <%= form.collection_select(:player_id, Player.all, :id, :name) %>
   </div>
 
-  <div class="field">
-    <%= form.label :draft_id %>
-    <%= form.text_field :draft_id %>
-  </div>
+  <%= form.hidden_field :draft_id, value: @draft.id %>
 
   <div class="actions">
     <%= form.submit %>

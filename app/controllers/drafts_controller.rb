@@ -14,7 +14,7 @@ class DraftsController < ApplicationController
   # GET /drafts/1.json
   def show
     @draft = Draft.find(params[:id])
-    @picks = Pick.find_by(draft_id: params[:id])
+    @picks = @draft.picks.order('created_at DESC')
     @pick = Pick.new(draft_id: params[:id])
   end
 

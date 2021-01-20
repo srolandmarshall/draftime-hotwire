@@ -2,6 +2,7 @@
 
 class PicksController < ApplicationController
   before_action :set_pick, only: %i[show edit update destroy]
+  autocomplete :player, :name
 
   # GET /picks
   # GET /picks.json

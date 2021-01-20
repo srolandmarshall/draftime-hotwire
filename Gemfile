@@ -62,3 +62,5 @@ gem "faker", "~> 2.15"
 gem "pry", "~> 0.13.1"
 
 gem "pry-rescue", "~> 1.5"
+
+gem "rails-jquery-autocomplete", "~> 1.0"

@@ -8,4 +8,6 @@ class Draft < ApplicationRecord
 
   belongs_to :league
   validates_presence_of :league, presence: true
+
+  has_many :picks
 end

@@ -1,0 +1,8 @@
+<%= turbo_frame_tag dom_id(pick) do %>
+  <div class="pick">
+    <%= pick.player.name %>
+      <div class="btn-group float-right">
+        <%= button_to 'Delete', pick, method: :delete, class: "btn btn-danger" %>
+      </div>
+  </div>
+<% end %>
