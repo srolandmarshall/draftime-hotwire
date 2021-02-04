@@ -1,10 +1,17 @@
+
 document.addEventListener("turbo:load", function() {
   console.log("Turbo loaded")
-  autoComplete()
+  playerAutoComplete();
 });
 
-const autoComplete = () => {
-$input = $('*[data-behavior="autocomplete"]')
+document.addEventListener("turbo:before-stream-render", function(){
+  console.log("before-stream-render event")
+  $input = $('#player_chooser')
+  $input.val('')
+})
+
+const playerAutoComplete = () => {
+$input = $('#player_chooser')
 
   var options = {
     url: function(phrase) {
@@ -13,17 +20,10 @@ $input = $('*[data-behavior="autocomplete"]')
       getValue: "name",
       list: {
         onSelectItemEvent: function() {
-            var selectedItemValue = $("#player_id").getSelectedItemData().id;
+            var selectedItemValue = $("#player_chooser").getSelectedItemData().id;
             $("#pick_player_id").val(selectedItemValue).trigger("change");
         }
     }
   };
-
   $input.easyAutocomplete(options);
 }
-// document.addEventListener("turbo:load", function() {
-//   var options = {
-//     data: ["John", "Paul", "George", "Ringo"]
-//   };
-//   $('*[data-behavior="autocomplete"]').easyAutocomplete(options);
-// });

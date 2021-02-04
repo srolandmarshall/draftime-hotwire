@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <input type="search" id="player_id" name="player_id" placeholder="Enter name..." data-behavior="autocomplete">
+  <input type="search" id="player_chooser" name="player_chooser" placeholder="Enter name..." data-behavior="autocomplete" >
 
   <%= form.hidden_field :draft_id, value: @draft.id %>
   <%= form.hidden_field :player_id, value: nil %>
