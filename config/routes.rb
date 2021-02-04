@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :leagues
   resources :drafts
   root to: 'drafts#index'
+  get 'players/search'
 
   resources :picks do
     get :autocomplete_player_name, on: :collection

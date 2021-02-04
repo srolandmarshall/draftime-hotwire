@@ -1,20 +1,27 @@
 document.addEventListener("turbo:load", function() {
+  console.log("Turbo loaded")
+  autoComplete()
+});
 
-  $input = $('*[data-behavior="autocomplete"]')
+const autoComplete = () => {
+$input = $('*[data-behavior="autocomplete"]')
 
   var options = {
     url: function(phrase) {
       return "/players/search.json?q=" + phrase;
     },
-    getValue: "name",
+      getValue: "name",
+      list: {
+        onSelectItemEvent: function() {
+            var selectedItemValue = $("#player_id").getSelectedItemData().id;
+            $("#pick_player_id").val(selectedItemValue).trigger("change");
+        }
+    }
   };
 
   $input.easyAutocomplete(options);
-
-});
-
-
-// document.addEventListener("turbolinks: load", function() {
+}
+// document.addEventListener("turbo:load", function() {
 //   var options = {
 //     data: ["John", "Paul", "George", "Ringo"]
 //   };

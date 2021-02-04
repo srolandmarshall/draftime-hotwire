@@ -23,7 +23,7 @@ class PlayersController < ApplicationController
 
   def search
     q = params[:q].downcase
-    @players = Player.where('fname ILIKE ? or lname ILIKE ?', "%#{q}%", "%#{q}%").limit(5)
+    @players = Player.where('fname ILIKE ? or lname ILIKE ?', "%#{q}%", "%#{q}%").limit(10)
     render json: @players
   end
 

@@ -11,14 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :player_id %>
-    <%= form.collection_select(:player_id, Player.all, :id, :name) %>
-  </div>
+  <input type="search" id="player_id" name="player_id" placeholder="Enter name..." data-behavior="autocomplete">
 
   <%= form.hidden_field :draft_id, value: @draft.id %>
+  <%= form.hidden_field :player_id, value: nil %>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Submit Pick" %>
   </div>
 <% end %>
