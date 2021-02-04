@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 def define_api_key
-  FFNerd.api_key = 'mkpsqkxz365y'
+  FFNerd.api_key = ENV['FFNERD_API_KEY']
 end
 
 def create_nfl_teams
