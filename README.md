@@ -23,6 +23,7 @@ To get started:
 - `clone` this repo locally
 - `cd` to the repo
 - `bundle install`
+- Follow instructions in the `.env.sample` file
 - `rake db:create`
 - `rake db:migrate` (and then `rake db:seed` if it does not seed automatically)
 - `foreman start`
