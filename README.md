@@ -16,7 +16,9 @@ To get started:
 
 - [Install Ruby and Rails](https://gorails.com/setup/osx/11.0-big-sur)
 - [Install Redis](https://gist.github.com/tomysmile/1b8a321e7c58499ef9f9441b2faa0aa8)
-- [Install Postgresql](https://wiki.postgresql.org/wiki/Homebrew)
+- [Install PostGresQL](https://wiki.postgresql.org/wiki/Homebrew)
+- If you don't want to use `brew services start redis` to auto-launch Redis on system start, you will want to install Foreman in order to launch Redis and Rails server simultaneously.
+- - To do so, simply `gem install foreman`. Do not add to Gemfile or you will have issues.
 
 ### Running Draftime
 

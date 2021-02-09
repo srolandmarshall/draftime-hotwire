@@ -1,7 +1,8 @@
 <%= turbo_frame_tag dom_id(draft) do %>
   <div class="card">
     <div class="card-body">
-      <%= link_to draft.title, draft_path(draft), 'data-turbo-frame': :_top %><br/>
+      <%= link_to draft.title, draft_path(draft), 'data-turbo-frame': :_top %>
+      <br />
       <%= draft.league.name %>
       <div class="btn-group float-right">
         <%= link_to 'Edit', edit_draft_path(draft), class:'btn btn-warning' %>

@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.0'
+ruby '~> 2.7.0'
 gem 'dotenv-rails', groups: %i[development test]
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -45,6 +45,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem "rubocop", "~> 1.9"
 end
 
 group :test do
@@ -67,3 +68,4 @@ gem 'pry', '~> 0.13.1'
 gem 'pry-rescue', '~> 1.5'
 
 gem 'rails-jquery-autocomplete', '~> 1.0'
+
